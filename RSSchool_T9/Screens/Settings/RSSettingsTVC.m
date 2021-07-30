@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 51;
+    [self.tableView setScrollEnabled:NO];
 }
 
 
