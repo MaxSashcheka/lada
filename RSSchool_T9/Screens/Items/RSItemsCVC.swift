@@ -14,7 +14,6 @@ class RSItemsCVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        layoutUI()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,10 +35,16 @@ class RSItemsCVC: UICollectionViewController {
         return cell
     }
     
-    private func layoutUI() {
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        ])
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch FillingData.data[indexPath.row] {
+        case .story(let story):
+            let storyVC = RSStoryVC()
+            storyVC.configure(with: story)
+            storyVC.modalPresentationStyle = .fullScreen
+            self.present(storyVC, animated: true)
+        case .gallery(let gallery):
+            print("Gallery", gallery)
+        }
     }
 
 }

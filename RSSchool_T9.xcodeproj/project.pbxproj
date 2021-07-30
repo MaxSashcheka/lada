@@ -27,6 +27,7 @@
 		2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F31126AF5FBE00F43852 /* s4-title.txt */; };
 		4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007328E26B3D650006C0C6C /* NSUserDefaults+Exists.m */; };
 		4007329226B3EDBD006C0C6C /* RSStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329126B3EDBD006C0C6C /* RSStoryCell.swift */; };
+		4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329526B44495006C0C6C /* RSStoryVC.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -60,6 +61,7 @@
 		4007328D26B3D650006C0C6C /* NSUserDefaults+Exists.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Exists.h"; sourceTree = "<group>"; };
 		4007328E26B3D650006C0C6C /* NSUserDefaults+Exists.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Exists.m"; sourceTree = "<group>"; };
 		4007329126B3EDBD006C0C6C /* RSStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryCell.swift; sourceTree = "<group>"; };
+		4007329526B44495006C0C6C /* RSStoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryVC.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -199,6 +201,21 @@
 			path = "Story Cell";
 			sourceTree = "<group>";
 		};
+		4007329326B44478006C0C6C /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				4007329526B44495006C0C6C /* RSStoryVC.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		4007329426B4447D006C0C6C /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +259,8 @@
 		4069C4E226B2A5BC008F69BC /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				4007329326B44478006C0C6C /* Story */,
+				4007329426B4447D006C0C6C /* Gallery */,
 				4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */,
 			);
 			path = Items;
@@ -408,6 +427,7 @@
 				4069C50126B2CC19008F69BC /* UIColor+ColorWithHex.m in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
+				4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */,
 				4069C4EF26B2A857008F69BC /* RSColorsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
