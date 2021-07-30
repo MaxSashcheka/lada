@@ -18,14 +18,15 @@ class RSTabbarController: UITabBarController {
     
     private func configuredRSItemsVC() -> RSItemsVC {
         let itemsVC = RSItemsVC()
-        itemsVC.tabBarItem = UITabBarItem(title: "Items", image: UIImage(systemName: "person"), tag: 0)
+        itemsVC.tabBarItem = UITabBarItem(title: "Items", image: UIImage(systemName: "square.grid.2x2"), tag: 0)
         return itemsVC
     }
     
-    private func configuredRSSettingsVC() -> RSSettingsTVC {
-        let settingsVC = RSSettingsTVC()
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "star"), tag: 1)
-        return settingsVC
+    private func configuredRSSettingsVC() -> UINavigationController {
+        let settingsVC = RSSettingsTVC(style: .insetGrouped)
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 1)
+        settingsVC.title = "Settings"
+        return UINavigationController(rootViewController: settingsVC)
     }
 
 }

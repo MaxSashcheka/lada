@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene         = windowScene
         window?.rootViewController  = RSTabbarController()
         window?.makeKeyAndVisible()
+        window?.tintColor = UIColor(named: "tintColor")
     }
 }
 

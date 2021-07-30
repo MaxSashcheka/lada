@@ -8,15 +8,12 @@
 // Copyright © 2021 RSSchool. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "UILabel+ColorFromText.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RSColorsTVC : UITableViewController
+@interface UIColor (ColorWithHex)
 
-@property(nonatomic) NSInteger selectedColorIndex;
-
-+(NSArray<NSString*>*)sampleColors;
++ (UIColor *) colorWithHexString: (NSString *) hexString;
 
 @end
 
