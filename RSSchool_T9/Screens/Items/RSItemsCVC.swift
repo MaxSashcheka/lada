@@ -18,14 +18,21 @@ class RSItemsCVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        FillingData.data.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! RSStoryCell
-        cell.imageView.image = UIImage(named: "story-1")
-        cell.titleLabel.text = "Man’s best friend"
-        cell.typeLabel.text  = "Story"
+        
+        var content: ContentRepresentable
+        switch FillingData.data[indexPath.row] {
+        case .story(let story):     content = story
+        case .gallery(let gallery): content = gallery
+        }
+        
+        cell.imageView.image = content.coverImage
+        cell.titleLabel.text = content.title
+        cell.typeLabel.text  = content.type
         return cell
     }
     

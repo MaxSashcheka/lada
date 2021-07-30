@@ -56,13 +56,8 @@ class RSStoryCell: UICollectionViewCell {
         //Gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.colors = [
-            UIColor.black.withAlphaComponent(0).cgColor,
-            UIColor.black.withAlphaComponent(1).cgColor,
-        ]
-        gradientLayer.locations = [0.74, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.25)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.95)
+        gradientLayer.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.65, 0.95]
         
         imageView.layer.insertSublayer(gradientLayer, at: 0)
     }
