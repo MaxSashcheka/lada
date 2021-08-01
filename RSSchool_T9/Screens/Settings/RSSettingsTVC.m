@@ -28,7 +28,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.selectedColorIndex = [NSUserDefaults selectedColorIndexIfPersistedOr:4];
+    self.selectedColorIndex = [NSUserDefaults selectedColorIndexIfPersistedOr:6];
     self.drawStories = [NSUserDefaults drawStoriesIfPersistedOr:YES];
     [self.tableView reloadData];
 }
