@@ -40,12 +40,12 @@ class RSItemsCVC: UICollectionViewController {
         //CODE DUPLICATION
         case .story(let story):
             let storyVC = RSStoryVC()
-            storyVC.configure(with: story)
+            storyVC.story = story
             storyVC.modalPresentationStyle = .fullScreen
             self.present(storyVC, animated: true)
         case .gallery(let gallery):
             let galleryVC = RSGalleryVC()
-            galleryVC.configure(with: gallery)
+            galleryVC.gallery = gallery
             galleryVC.modalPresentationStyle = .fullScreen
             self.present(galleryVC, animated: true)
         }

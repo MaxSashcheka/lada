@@ -10,14 +10,12 @@
 import UIKit
 
 class RSStoryVC: RSContentVC {
-
+    
+    var story: Story!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-    }
-    
-    func configure(with story: Story) {
-        
+        setupBasicUI(with: story)
     }
 
 }

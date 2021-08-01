@@ -14,6 +14,7 @@ class RSContentVC: UIViewController {
     let scrollView  = UIScrollView()
     let contentView = UIView()
     
+    // MARK: - Customized UI Elements
     let dismissButtton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -35,7 +36,7 @@ class RSContentVC: UIViewController {
         img.layer.cornerRadius = 8
         img.layer.borderWidth  = 1
         img.layer.borderColor  = UIColor.white.cgColor
-        img.contentMode        = .scaleAspectFit
+        img.contentMode        = .scaleAspectFill
         img.clipsToBounds      = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
@@ -49,7 +50,7 @@ class RSContentVC: UIViewController {
         lbl.lineBreakMode  = .byWordWrapping
         
         var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.05
+        paragraphStyle.lineHeightMultiple = 1.1
         lbl.attributedText = NSMutableAttributedString(string: "Man’s best \nfriend", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -75,14 +76,14 @@ class RSContentVC: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
-
+    
+    
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         configureScrollView()
         layoutUI()
-        titleLabel.text = "Man’s best friend"
-        imageView.image = UIImage(named: "story-1")
-        setTypeLabelText(to: "Story")
     }
     
     override func viewWillLayoutSubviews() {
@@ -94,6 +95,8 @@ class RSContentVC: UIViewController {
         imageView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    
+    // MARK: - Configurations
     private func configureScrollView() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -136,7 +139,15 @@ class RSContentVC: UIViewController {
         ])
     }
     
-    private func setTypeLabelText(to text: String) {
+    
+    // MARK: - API for Child VC's
+    func setupBasicUI(with content: ContentRepresentable) {
+        titleLabel.text = content.title
+        imageView.image = content.coverImage
+        setTypeLabelText(to: content.type)
+    }
+    
+    func setTypeLabelText(to text: String) {
         typeLabel.text = text
         typeLabel.sizeToFit()
         typeLabel.widthAnchor.constraint(equalToConstant: typeLabel.bounds.width + 60).isActive = true

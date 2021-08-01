@@ -10,14 +10,12 @@
 import UIKit
 
 class RSGalleryVC: RSContentVC {
+    
+    var gallery: Gallery!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        setupBasicUI(with: gallery)
     }
     
-    func configure(with gallery: Gallery) {
-        
-    }
-
 }
