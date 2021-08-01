@@ -11,6 +11,9 @@ import UIKit
 
 class RSContentVC: UIViewController {
     
+    let scrollView  = UIScrollView()
+    let contentView = UIView()
+    
     let dismissButtton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -75,6 +78,7 @@ class RSContentVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureScrollView()
         layoutUI()
         titleLabel.text = "Man’s best friend"
         imageView.image = UIImage(named: "story-1")
@@ -90,19 +94,31 @@ class RSContentVC: UIViewController {
         imageView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.pinToEdges(of: view)
+        contentView.pinToEdges(of: scrollView)
+        
+        NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 1000)//work on height
+        ])
+    }
+    
     private func layoutUI() {
-        view.addSubviews(dismissButtton, imageView, typeLabel, separationLine)
+        contentView.addSubviews(dismissButtton, imageView, typeLabel, separationLine)
         imageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            dismissButtton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            dismissButtton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            dismissButtton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dismissButtton.heightAnchor.constraint(equalToConstant: 40),
             dismissButtton.widthAnchor.constraint(equalToConstant: 40),
             
             imageView.topAnchor.constraint(equalTo: dismissButtton.bottomAnchor, constant: 30),
-            imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.337),
             
             titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 30),
@@ -115,8 +131,8 @@ class RSContentVC: UIViewController {
             
             separationLine.topAnchor.constraint(equalTo: typeLabel.bottomAnchor, constant: 39),
             separationLine.heightAnchor.constraint(equalToConstant: 1),
-            separationLine.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
-            separationLine.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -100),
+            separationLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 100),
+            separationLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100),
         ])
     }
     
