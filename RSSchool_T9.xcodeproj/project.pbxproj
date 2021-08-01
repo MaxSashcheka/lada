@@ -30,6 +30,8 @@
 		4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329526B44495006C0C6C /* RSStoryVC.swift */; };
 		4007329926B44B1A006C0C6C /* RSGalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329826B44B1A006C0C6C /* RSGalleryVC.swift */; };
 		4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329A26B44B28006C0C6C /* RSContentVC.swift */; };
+		401AC18A26B6E5A200B087C9 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18926B6E5A200B087C9 /* InsetLabel.swift */; };
+		401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -66,6 +68,8 @@
 		4007329526B44495006C0C6C /* RSStoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryVC.swift; sourceTree = "<group>"; };
 		4007329826B44B1A006C0C6C /* RSGalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSGalleryVC.swift; sourceTree = "<group>"; };
 		4007329A26B44B28006C0C6C /* RSContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSContentVC.swift; sourceTree = "<group>"; };
+		401AC18926B6E5A200B087C9 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -231,6 +235,22 @@
 			path = "Content Controllers";
 			sourceTree = "<group>";
 		};
+		401AC18826B6E59100B087C9 /* Inset Label */ = {
+			isa = PBXGroup;
+			children = (
+				401AC18926B6E5A200B087C9 /* InsetLabel.swift */,
+			);
+			path = "Inset Label";
+			sourceTree = "<group>";
+		};
+		401AC18B26B6E5CA00B087C9 /* UIView+AddSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */,
+			);
+			path = "UIView+AddSubviews";
+			sourceTree = "<group>";
+		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +322,7 @@
 		4069C4F026B2C12E008F69BC /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				401AC18826B6E59100B087C9 /* Inset Label */,
 				4007329026B3ED91006C0C6C /* Story Cell */,
 				4069C4F226B2C139008F69BC /* Draw Stories Cell */,
 			);
@@ -320,6 +341,7 @@
 		4069C4FE26B2CBF9008F69BC /* Cathegories */ = {
 			isa = PBXGroup;
 			children = (
+				401AC18B26B6E5CA00B087C9 /* UIView+AddSubviews */,
 				4007328C26B3D639006C0C6C /* Object Exists */,
 				4069C50426B2CD84008F69BC /* Label Color from Text */,
 				4069C50226B2CD4D008F69BC /* UIColor from hex */,
@@ -434,6 +456,7 @@
 				4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */,
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
+				401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
@@ -444,6 +467,7 @@
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
 				4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */,
+				401AC18A26B6E5A200B087C9 /* InsetLabel.swift in Sources */,
 				4069C4EF26B2A857008F69BC /* RSColorsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

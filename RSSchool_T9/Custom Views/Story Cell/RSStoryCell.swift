@@ -16,24 +16,24 @@ class RSStoryCell: UICollectionViewCell {
         img.layer.cornerRadius = 10
         img.layer.borderColor  = UIColor.black.cgColor
         img.layer.borderWidth  = 1.0
-        img.clipsToBounds = true
-        img.contentMode = .scaleAspectFill
+        img.clipsToBounds      = true
+        img.contentMode        = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     let titleLabel: UILabel = {
-        let lbl = UILabel()
+        let lbl       = UILabel()
         lbl.textColor = UIColor.white
-        lbl.font = UIFont(name: "Rockwell", size: 16)
+        lbl.font      = UIFont(name: "Rockwell", size: 16)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
     let typeLabel: UILabel = {
-        let lbl = UILabel()
+        let lbl       = UILabel()
         lbl.textColor = UIColor(hexString: "B6B6B6")
-        lbl.font = UIFont(name: "Rockwell", size: 12)
+        lbl.font      = UIFont(name: "Rockwell", size: 12)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -56,7 +56,7 @@ class RSStoryCell: UICollectionViewCell {
         //Gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.colors = [ UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.65, 0.95]
         
         imageView.layer.insertSublayer(gradientLayer, at: 0)
