@@ -37,13 +37,17 @@ class RSItemsCVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch FillingData.data[indexPath.row] {
+        //CODE DUPLICATION
         case .story(let story):
             let storyVC = RSStoryVC()
             storyVC.configure(with: story)
             storyVC.modalPresentationStyle = .fullScreen
             self.present(storyVC, animated: true)
         case .gallery(let gallery):
-            print("Gallery", gallery)
+            let galleryVC = RSGalleryVC()
+            galleryVC.configure(with: gallery)
+            galleryVC.modalPresentationStyle = .fullScreen
+            self.present(galleryVC, animated: true)
         }
     }
 
