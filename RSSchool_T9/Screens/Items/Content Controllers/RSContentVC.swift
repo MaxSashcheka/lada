@@ -31,8 +31,8 @@ class RSContentVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    let imageView: UIImageView = {
-        let img = UIImageView()
+    let imageView: GradientImageView = {
+        let img = GradientImageView(gradientLocations: [0.5, 1])
         img.layer.cornerRadius = 8
         img.layer.borderWidth  = 1
         img.layer.borderColor  = UIColor.white.cgColor
@@ -86,27 +86,13 @@ class RSContentVC: UIViewController {
         layoutUI()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = imageView.bounds
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.withAlphaComponent(0.72).cgColor]
-        gradientLayer.locations = [0.5, 1]
-        imageView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
     
     // MARK: - Configurations
     private func configureScrollView() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        scrollView.pinToEdges(of: view)
+        scrollView.pinToSafeAreaEdges(of: view)
         contentView.pinToEdges(of: scrollView)
-        
-        NSLayoutConstraint.activate([
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 1000)//work on height
-        ])
     }
     
     private func layoutUI() {
@@ -114,6 +100,9 @@ class RSContentVC: UIViewController {
         imageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 1000),
+            
             dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             dismissButtton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dismissButtton.heightAnchor.constraint(equalToConstant: 40),

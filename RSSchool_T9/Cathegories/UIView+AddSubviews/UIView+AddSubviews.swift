@@ -25,4 +25,15 @@ extension UIView {
             bottomAnchor.constraint(equalTo: superview.bottomAnchor),
         ])
     }
+    
+    func pinToSafeAreaEdges(of superview: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor),
+            leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor),
+            bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
 }

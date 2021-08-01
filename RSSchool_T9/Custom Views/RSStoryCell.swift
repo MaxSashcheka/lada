@@ -11,8 +11,8 @@ import UIKit
 
 class RSStoryCell: UICollectionViewCell {
     
-    let imageView: UIImageView = {
-        let img = UIImageView()
+    let imageView: GradientImageView = {
+        let img = GradientImageView(gradientLocations: [0.74, 0.95])
         img.layer.cornerRadius = 10
         img.layer.borderColor  = UIColor.black.cgColor
         img.layer.borderWidth  = 1.0
@@ -52,14 +52,6 @@ class RSStoryCell: UICollectionViewCell {
         layer.cornerRadius = 18
         layer.borderWidth  = 1.0
         layer.borderColor  = UIColor.black.cgColor
-
-        //Gradient
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradientLayer.locations = [0.65, 0.95]
-        
-        imageView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     private func layoutUI() {

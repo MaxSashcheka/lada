@@ -37,7 +37,6 @@ class RSItemsCVC: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch FillingData.data[indexPath.row] {
-        //CODE DUPLICATION
         case .story(let story):
             let storyVC = RSStoryVC()
             storyVC.story = story
@@ -49,6 +48,30 @@ class RSItemsCVC: UICollectionViewController {
             galleryVC.modalPresentationStyle = .fullScreen
             self.present(galleryVC, animated: true)
         }
+    }
+
+}
+
+extension RSItemsCVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sectionInset = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset
+        let width = collectionView.safeAreaLayoutGuide.layoutFrame.width
+            - sectionInset.left
+            - sectionInset.right
+            - collectionView.contentInset.left
+            - collectionView.contentInset.right
+
+        let minimumItemSpacing: CGFloat = 30
+        let aspectRatio: CGFloat        = 1.223
+        let availableSpace              = width - minimumItemSpacing
+        let itemWidth                   = availableSpace / 2
+
+        return CGSize(width: itemWidth, height: itemWidth * aspectRatio)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView?.collectionViewLayout.invalidateLayout();
     }
 
 }
