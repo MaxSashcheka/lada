@@ -221,14 +221,14 @@
 			path = Gallery;
 			sourceTree = "<group>";
 		};
-		4007329726B44ADC006C0C6C /* Content Controller */ = {
+		4007329726B44ADC006C0C6C /* Content Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4007329426B4447D006C0C6C /* Gallery */,
 				4007329326B44478006C0C6C /* Story */,
 				4007329A26B44B28006C0C6C /* RSContentVC.swift */,
 			);
-			path = "Content Controller";
+			path = "Content Controllers";
 			sourceTree = "<group>";
 		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
@@ -274,7 +274,7 @@
 		4069C4E226B2A5BC008F69BC /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				4007329726B44ADC006C0C6C /* Content Controller */,
+				4007329726B44ADC006C0C6C /* Content Controllers */,
 				4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */,
 			);
 			path = Items;
