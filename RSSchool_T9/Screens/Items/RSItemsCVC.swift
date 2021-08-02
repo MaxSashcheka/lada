@@ -11,11 +11,28 @@ import UIKit
 
 class RSItemsCVC: UICollectionViewController {
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
+    }
+    
+    
+    // MARK: - Customization
+    private func configureCollectionView() {
+        view.backgroundColor           = .white
         collectionView.backgroundColor = .white
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
 
+    // MARK: - Delegate methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         FillingData.data.count
     }
@@ -52,6 +69,7 @@ class RSItemsCVC: UICollectionViewController {
 
 }
 
+// MARK: - Adjusting cllection flow
 extension RSItemsCVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -62,7 +80,7 @@ extension RSItemsCVC: UICollectionViewDelegateFlowLayout {
             - collectionView.contentInset.left
             - collectionView.contentInset.right
 
-        let minimumItemSpacing: CGFloat = 30
+        let minimumItemSpacing: CGFloat = 16
         let aspectRatio: CGFloat        = 1.223
         let availableSpace              = width - minimumItemSpacing
         let itemWidth                   = availableSpace / 2

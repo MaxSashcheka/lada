@@ -124,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4069C4E126B2A5B7008F69BC /* Screens */,
+				401AC19D26B7D88100B087C9 /* Abstract Classes */,
 				4069C4F026B2C12E008F69BC /* Custom Views */,
 				4069C4FE26B2CBF9008F69BC /* Cathegories */,
 				2BB9F28F26ADFAEB00F43852 /* Data */,
@@ -229,8 +230,6 @@
 		4007329726B44ADC006C0C6C /* Content Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */,
-				4007329A26B44B28006C0C6C /* RSContentVC.swift */,
 				4007329426B4447D006C0C6C /* Gallery */,
 				4007329326B44478006C0C6C /* Story */,
 			);
@@ -251,6 +250,15 @@
 				401AC19B26B7D17500B087C9 /* ImageVC.swift */,
 			);
 			path = ImageVC;
+			sourceTree = "<group>";
+		};
+		401AC19D26B7D88100B087C9 /* Abstract Classes */ = {
+			isa = PBXGroup;
+			children = (
+				401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */,
+				4007329A26B44B28006C0C6C /* RSContentVC.swift */,
+			);
+			path = "Abstract Classes";
 			sourceTree = "<group>";
 		};
 		4069C4DE26B2A478008F69BC /* Support */ = {

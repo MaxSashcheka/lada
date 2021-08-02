@@ -32,8 +32,8 @@ class RSTabbarController: UITabBarController {
     
     private func configuredFlowLayout() -> UICollectionViewFlowLayout{
         let width                       = UIScreen.main.bounds.width
-        let padding: CGFloat            = 16
-        let minimumItemSpacing: CGFloat = 30
+        let padding: CGFloat            = 20
+        let minimumItemSpacing: CGFloat = 16
         let aspectRatio: CGFloat        = 1.223
         let availableSpace              = width - (2 * padding) - (minimumItemSpacing)
         let itemWidth                   = availableSpace / 2
