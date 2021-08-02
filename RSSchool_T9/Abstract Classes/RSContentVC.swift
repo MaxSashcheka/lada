@@ -9,9 +9,28 @@
 
 import UIKit
 
-class RSContentVC: RSBlackClosableVC {
+class RSContentVC: UIViewController {
     
     // MARK: - Customized UI Elements
+    let scrollView  = UIScrollView()
+    let contentView = UIView()
+    
+    let dismissButtton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "xmark"), for: .normal)
+        btn.tintColor          = .white
+        btn.layer.cornerRadius = 20
+        btn.layer.borderWidth  = 1
+        btn.layer.borderColor  = UIColor.white.cgColor
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc private func dismissController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     let imageView: GradientImageView = {
         let img = GradientImageView(gradientLocations: [0.5, 1])
         img.layer.cornerRadius = 8
@@ -62,17 +81,31 @@ class RSContentVC: RSBlackClosableVC {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureScrollView()
         layoutUI()
     }
     
     
     // MARK: - Configurations
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.pinToSafeAreaEdges(of: view)
+        contentView.pinToEdges(of: scrollView)
+    }
+    
     private func layoutUI() {
-        contentView.addSubviews(imageView, typeLabel, separationLine)
+        contentView.addSubviews(imageView, typeLabel, separationLine, dismissButtton)
         imageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             contentView.heightAnchor.constraint(equalToConstant: 3000),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
+            dismissButtton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            dismissButtton.heightAnchor.constraint(equalToConstant: 40),
+            dismissButtton.widthAnchor.constraint(equalToConstant: 40),
             
             imageView.topAnchor.constraint(equalTo: dismissButtton.bottomAnchor, constant: 30),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),

@@ -34,7 +34,6 @@
 		401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */; };
 		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
 		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
-		401AC19926B7CED900B087C9 /* RSBlackClosableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */; };
 		401AC19C26B7D17500B087C9 /* RSDetailedImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
@@ -76,7 +75,6 @@
 		401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
-		401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBlackClosableVC.swift; sourceTree = "<group>"; };
 		401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDetailedImageVC.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 		401AC19D26B7D88100B087C9 /* Abstract Classes */ = {
 			isa = PBXGroup;
 			children = (
-				401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */,
 				4007329A26B44B28006C0C6C /* RSContentVC.swift */,
 			);
 			path = "Abstract Classes";
@@ -471,7 +468,6 @@
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
 				401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */,
-				401AC19926B7CED900B087C9 /* RSBlackClosableVC.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
