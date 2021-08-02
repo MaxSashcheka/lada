@@ -35,7 +35,7 @@
 		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
 		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
 		401AC19926B7CED900B087C9 /* RSBlackClosableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */; };
-		401AC19C26B7D17500B087C9 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* ImageVC.swift */; };
+		401AC19C26B7D17500B087C9 /* RSDetailedImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -77,7 +77,7 @@
 		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
 		401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBlackClosableVC.swift; sourceTree = "<group>"; };
-		401AC19B26B7D17500B087C9 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDetailedImageVC.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				4007329826B44B1A006C0C6C /* RSGalleryVC.swift */,
-				401AC19A26B7D16700B087C9 /* ImageVC */,
+				401AC19A26B7D16700B087C9 /* Detailed Image */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -244,12 +244,12 @@
 			path = "UIView+AddSubviews";
 			sourceTree = "<group>";
 		};
-		401AC19A26B7D16700B087C9 /* ImageVC */ = {
+		401AC19A26B7D16700B087C9 /* Detailed Image */ = {
 			isa = PBXGroup;
 			children = (
-				401AC19B26B7D17500B087C9 /* ImageVC.swift */,
+				401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */,
 			);
-			path = ImageVC;
+			path = "Detailed Image";
 			sourceTree = "<group>";
 		};
 		401AC19D26B7D88100B087C9 /* Abstract Classes */ = {
@@ -460,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401AC19C26B7D17500B087C9 /* ImageVC.swift in Sources */,
+				401AC19C26B7D17500B087C9 /* RSDetailedImageVC.swift in Sources */,
 				4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */,
 				4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */,
 				4007329226B3EDBD006C0C6C /* RSStoryCell.swift in Sources */,

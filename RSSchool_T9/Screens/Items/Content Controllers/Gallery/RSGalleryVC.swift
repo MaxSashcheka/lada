@@ -42,7 +42,7 @@ class RSGalleryVC: RSContentVC {
     }
     
     @objc private func openImageVC(_ sender: UITapGestureRecognizer) {
-        let imageVC = ImageVC()
+        let imageVC = RSDetailedImageVC()
         imageVC.imageView.image = (sender.view as! GalleryImageView).imageView.image
         imageVC.modalPresentationStyle = .fullScreen
         self.present(imageVC, animated: true)
