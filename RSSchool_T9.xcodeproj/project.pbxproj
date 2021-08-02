@@ -33,6 +33,9 @@
 		401AC18A26B6E5A200B087C9 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18926B6E5A200B087C9 /* InsetLabel.swift */; };
 		401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */; };
 		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
+		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
+		401AC19926B7CED900B087C9 /* RSBlackClosableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */; };
+		401AC19C26B7D17500B087C9 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* ImageVC.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -72,6 +75,9 @@
 		401AC18926B6E5A200B087C9 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
+		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
+		401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBlackClosableVC.swift; sourceTree = "<group>"; };
+		401AC19B26B7D17500B087C9 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				4007329826B44B1A006C0C6C /* RSGalleryVC.swift */,
+				401AC19A26B7D16700B087C9 /* ImageVC */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 		4007329726B44ADC006C0C6C /* Content Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				401AC19826B7CED900B087C9 /* RSBlackClosableVC.swift */,
 				4007329A26B44B28006C0C6C /* RSContentVC.swift */,
 				4007329426B4447D006C0C6C /* Gallery */,
 				4007329326B44478006C0C6C /* Story */,
@@ -235,6 +243,14 @@
 				401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */,
 			);
 			path = "UIView+AddSubviews";
+			sourceTree = "<group>";
+		};
+		401AC19A26B7D16700B087C9 /* ImageVC */ = {
+			isa = PBXGroup;
+			children = (
+				401AC19B26B7D17500B087C9 /* ImageVC.swift */,
+			);
+			path = ImageVC;
 			sourceTree = "<group>";
 		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
@@ -311,6 +327,7 @@
 				401AC18926B6E5A200B087C9 /* InsetLabel.swift */,
 				4007329126B3EDBD006C0C6C /* RSStoryCell.swift */,
 				401AC19126B721DB00B087C9 /* GradientImageView.swift */,
+				401AC19626B7C72300B087C9 /* GalleryImageView.swift */,
 				4069C4F226B2C139008F69BC /* Draw Stories Cell */,
 			);
 			path = "Custom Views";
@@ -435,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401AC19C26B7D17500B087C9 /* ImageVC.swift in Sources */,
 				4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */,
 				4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */,
 				4007329226B3EDBD006C0C6C /* RSStoryCell.swift in Sources */,
@@ -445,6 +463,7 @@
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
 				401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */,
+				401AC19926B7CED900B087C9 /* RSBlackClosableVC.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
@@ -452,6 +471,7 @@
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
 				4069C4FA26B2C19D008F69BC /* RSDrawStoriesCell.m in Sources */,
 				4069C50126B2CC19008F69BC /* UIColor+ColorWithHex.m in Sources */,
+				401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
 				4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */,
@@ -604,7 +624,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y322LSDU5;
 				INFOPLIST_FILE = RSSchool_T9/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -613,6 +635,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zm1caps.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/Support/Application/RSSchool_T9-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -626,7 +649,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Y322LSDU5;
 				INFOPLIST_FILE = RSSchool_T9/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -635,6 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zm1caps.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/Support/Application/RSSchool_T9-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
