@@ -12,7 +12,6 @@ import UIKit
 class RSGalleryVC: RSContentVC {
     
     var gallery: Gallery!
-    var contentHeightConstraint: NSLayoutConstraint!
     
     let imagesStackView: UIStackView = {
         let sv = UIStackView()
@@ -29,6 +28,11 @@ class RSGalleryVC: RSContentVC {
         setupBasicUI(with: gallery)
         loadImagesToViews()
         layoutUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        contentHeightConstraint.constant = CGFloat(gallery.images.count + 1) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20) + 190
     }
     
     
@@ -50,27 +54,12 @@ class RSGalleryVC: RSContentVC {
     }
 
     private func layoutUI() {
-        contentHeightConstraint = NSLayoutConstraint(item: contentView,
-                                                     attribute: .height,
-                                                     relatedBy: .equal,
-                                                     toItem: nil,
-                                                     attribute: .notAnAttribute,
-                                                     multiplier: 1,
-                                                     constant: 0)
-        
         contentView.addSubview(imagesStackView)
         NSLayoutConstraint.activate([
-            contentHeightConstraint,
             imagesStackView.topAnchor.constraint(equalTo: separationLine.bottomAnchor, constant: 40),
             imagesStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             imagesStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         ])
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        print(view.safeAreaLayoutGuide.layoutFrame.width)
-        contentHeightConstraint.constant = CGFloat(gallery.images.count + 1) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20) + 190
     }
     
 }

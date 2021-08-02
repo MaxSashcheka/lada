@@ -9,7 +9,7 @@
 
 import UIKit
 
-class RSDetailedImageVC: UIViewController, UIScrollViewDelegate {
+class RSDetailedImageVC: UIViewController {
     
     let scrollView = UIScrollView()
     
@@ -36,22 +36,61 @@ class RSDetailedImageVC: UIViewController, UIScrollViewDelegate {
         return iv
     }()
     
-    @objc func toggleInterfaceAppearance() {
-        self.dismissButtton.isEnabled.toggle()
-        UIView.animate(withDuration: 0.15) { [weak self] in
-            guard let self = self else { return }
-            self.dismissButtton.alpha = self.dismissButtton.isEnabled ? 1 : 0
+    
+    // MARK: - Lifecycle methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .black
+        addTapGesture()
+        layoutUI()
+        updateMinimumZoomScale()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateMinimumZoomScale()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //MARK: REFACTOR (too tired to fix 😔)
+        let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
+        let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
+        let scale = min(widthScale,heightScale)
+        
+        switch UIDevice.current.orientation {
+        case .portrait:
+            let actualImageHeight = (imageView.image?.size.height)! * scale
+            scrollView.contentInset = UIEdgeInsets(top: view.frame.size.height / 2 - actualImageHeight / 2 - 40, left: 0, bottom: 0, right: 0)
+        case .landscapeLeft, .landscapeRight:
+            let actualImageWidth = (imageView.image?.size.width)! * scale
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: view.frame.size.width / 2 - actualImageWidth / 2 - 40, bottom: 0, right: 0)
+        default: break
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    // MARK: - Configurations
+    private func updateMinimumZoomScale() {
+        let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
+        let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
+        let scale = min(widthScale,heightScale)
+        scrollView.minimumZoomScale = scale
+        scrollView.zoomScale = scrollView.minimumZoomScale
+    }
+    
+    private func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleInterfaceAppearance))
         view.addGestureRecognizer(tap)
-        
-        updateMinimumZoomScale()
-        
+    }
+    
+    @objc func toggleInterfaceAppearance() {
+        dismissButtton.isHidden.toggle()
+    }
+    
+    
+    // MARK: - Layout
+    private func layoutUI() {
         view.addSubviews(scrollView, dismissButtton)
         scrollView.pinToSafeAreaEdges(of: view)
         scrollView.addSubview(imageView)
@@ -66,21 +105,18 @@ class RSDetailedImageVC: UIViewController, UIScrollViewDelegate {
             dismissButtton.widthAnchor.constraint(equalToConstant: 40),
         ])
     }
-    
-    func updateMinimumZoomScale() {
-        let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
-        let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
-        let scale = min(widthScale,heightScale)
-        scrollView.minimumZoomScale = scale
-    }
+}
+
+
+extension RSDetailedImageVC: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        updateMinimumZoomScale()
-        scrollView.zoomScale = scrollView.minimumZoomScale
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
     }
 }

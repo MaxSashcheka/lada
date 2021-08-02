@@ -12,6 +12,8 @@ import UIKit
 class RSContentVC: UIViewController {
     
     // MARK: - Customized UI Elements
+    var contentHeightConstraint: NSLayoutConstraint!
+    
     let scrollView  = UIScrollView()
     let contentView = UIView()
     
@@ -81,8 +83,14 @@ class RSContentVC: UIViewController {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         configureScrollView()
         layoutUI()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        contentHeightConstraint.constant = 500
     }
     
     
@@ -95,10 +103,19 @@ class RSContentVC: UIViewController {
     }
     
     private func layoutUI() {
+        contentHeightConstraint = NSLayoutConstraint(item: contentView,
+                                                     attribute: .height,
+                                                     relatedBy: .equal,
+                                                     toItem: nil,
+                                                     attribute: .notAnAttribute,
+                                                     multiplier: 1,
+                                                     constant: 0)
+        
         contentView.addSubviews(imageView, typeLabel, separationLine, dismissButtton)
         imageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
+            contentHeightConstraint,
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
@@ -134,7 +151,7 @@ class RSContentVC: UIViewController {
         setTypeLabelText(to: content.type)
     }
     
-    func setTypeLabelText(to text: String) {
+    private func setTypeLabelText(to text: String) {
         typeLabel.text = text
         typeLabel.sizeToFit()
         typeLabel.widthAnchor.constraint(equalToConstant: typeLabel.bounds.width + 60).isActive = true
