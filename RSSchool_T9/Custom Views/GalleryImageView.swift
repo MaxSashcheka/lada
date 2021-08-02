@@ -35,7 +35,7 @@ class GalleryImageView: UIView {
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.387)
+            self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.337)
         ])
     }
     

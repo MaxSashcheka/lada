@@ -99,7 +99,6 @@ class RSContentVC: UIViewController {
         imageView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalToConstant: 3000),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
