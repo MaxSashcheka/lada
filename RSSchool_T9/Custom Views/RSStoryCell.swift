@@ -12,7 +12,7 @@ import UIKit
 class RSStoryCell: UICollectionViewCell {
     
     let imageView: GradientImageView = {
-        let img = GradientImageView(gradientLocations: [0.74, 0.95])
+        let img = GradientImageView(gradientLocations: [0.64, 0.95])
         img.layer.cornerRadius = 10
         img.layer.borderColor  = UIColor.black.cgColor
         img.layer.borderWidth  = 1.0

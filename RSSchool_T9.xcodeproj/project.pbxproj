@@ -30,7 +30,7 @@
 		4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329526B44495006C0C6C /* RSStoryVC.swift */; };
 		4007329926B44B1A006C0C6C /* RSGalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329826B44B1A006C0C6C /* RSGalleryVC.swift */; };
 		4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329A26B44B28006C0C6C /* RSContentVC.swift */; };
-		401AC18A26B6E5A200B087C9 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18926B6E5A200B087C9 /* InsetLabel.swift */; };
+		401AC18A26B6E5A200B087C9 /* RSTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18926B6E5A200B087C9 /* RSTextLabel.swift */; };
 		401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */; };
 		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
 		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
@@ -71,7 +71,7 @@
 		4007329526B44495006C0C6C /* RSStoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryVC.swift; sourceTree = "<group>"; };
 		4007329826B44B1A006C0C6C /* RSGalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSGalleryVC.swift; sourceTree = "<group>"; };
 		4007329A26B44B28006C0C6C /* RSContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSContentVC.swift; sourceTree = "<group>"; };
-		401AC18926B6E5A200B087C9 /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		401AC18926B6E5A200B087C9 /* RSTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTextLabel.swift; sourceTree = "<group>"; };
 		401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		4069C4F026B2C12E008F69BC /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				401AC18926B6E5A200B087C9 /* InsetLabel.swift */,
+				401AC18926B6E5A200B087C9 /* RSTextLabel.swift */,
 				4007329126B3EDBD006C0C6C /* RSStoryCell.swift */,
 				401AC19126B721DB00B087C9 /* GradientImageView.swift */,
 				401AC19626B7C72300B087C9 /* GalleryImageView.swift */,
@@ -471,7 +471,7 @@
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
 				4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */,
-				401AC18A26B6E5A200B087C9 /* InsetLabel.swift in Sources */,
+				401AC18A26B6E5A200B087C9 /* RSTextLabel.swift in Sources */,
 				4069C4EF26B2A857008F69BC /* RSColorsTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

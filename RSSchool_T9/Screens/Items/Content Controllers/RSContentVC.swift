@@ -58,18 +58,7 @@ class RSContentVC: UIViewController {
         return lbl
     }()
     
-    let typeLabel: InsetLabel = {
-        let lbl = InsetLabel()
-        lbl.layer.cornerRadius    = 8
-        lbl.layer.borderWidth     = 1
-        lbl.layer.borderColor     = UIColor.white.cgColor
-        lbl.layer.backgroundColor = UIColor.black.cgColor
-        lbl.textColor             = UIColor.white
-        lbl.font                  = UIFont(name: "Rockwell-Regular", size: 24)
-        lbl.textAlignment         = .center
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
+    let typeLabel = RSTextLabel(insets: UIEdgeInsets(top: 8, left: 30, bottom: 3, right: 30),  textAlignment: .center)
     
     let separationLine: UILabel = {
         let lbl = UILabel()
@@ -86,11 +75,6 @@ class RSContentVC: UIViewController {
         view.backgroundColor = .black
         configureScrollView()
         layoutUI()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        contentHeightConstraint.constant = 500
     }
     
     

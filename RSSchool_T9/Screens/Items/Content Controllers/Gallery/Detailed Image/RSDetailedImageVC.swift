@@ -56,7 +56,7 @@ class RSDetailedImageVC: UIViewController {
         //MARK: REFACTOR (too tired to fix 😔)
         let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
         let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
-        let scale = min(widthScale,heightScale)
+        let scale = min(widthScale, heightScale)
         
         if UIScreen.main.bounds.height < UIScreen.main.bounds.width {
             let actualImageWidth = (imageView.image?.size.width)! * scale
@@ -64,10 +64,7 @@ class RSDetailedImageVC: UIViewController {
         } else {
             let actualImageHeight = (imageView.image?.size.height)! * scale
             scrollView.contentInset = UIEdgeInsets(top: view.frame.size.height / 2 - actualImageHeight / 2 - 40, left: 0, bottom: 0, right: 0)
-            print(view.frame.size.height / 2 - actualImageHeight / 2 - 40)
         }
-        
-        
     }
     
     
