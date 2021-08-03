@@ -49,10 +49,10 @@ class RSDetailedImageVC: UIViewController {
         
         if UIScreen.isPortrait {
             let actualImageHeight = (imageView.image?.size.height)! * scale
-            scrollView.contentInset = UIEdgeInsets(top: view.frame.size.height / 2 - actualImageHeight / 2 - 40, left: 0, bottom: 0, right: 0)
+            scrollView.contentInset = UIEdgeInsets(top: (view.frame.size.height - actualImageHeight) / 2 - 40, left: 0, bottom: 0, right: 0)
         } else {
             let actualImageWidth = (imageView.image?.size.width)! * scale
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: view.frame.size.width / 2 - actualImageWidth / 2 - 40, bottom: 0, right: 0)
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: (view.frame.size.width - actualImageWidth) / 2 - 40, bottom: 0, right: 0)
         }
     }
     

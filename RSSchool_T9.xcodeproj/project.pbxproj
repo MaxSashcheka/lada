@@ -44,6 +44,7 @@
 		405EFAAB26B93F6C000EF08C /* RSStoryPathCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */; };
 		405EFAAD26B9721C000EF08C /* RSDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAC26B9721C000EF08C /* RSDismissButton.swift */; };
 		405EFAB026B97B96000EF08C /* UIScreen+IsPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAF26B97B96000EF08C /* UIScreen+IsPortrait.swift */; };
+		4067192E26B9933600DC8DD4 /* RSGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067192D26B9933600DC8DD4 /* RSGalleryCell.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -94,6 +95,7 @@
 		405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryPathCell.swift; sourceTree = "<group>"; };
 		405EFAAC26B9721C000EF08C /* RSDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDismissButton.swift; sourceTree = "<group>"; };
 		405EFAAF26B97B96000EF08C /* UIScreen+IsPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+IsPortrait.swift"; sourceTree = "<group>"; };
+		4067192D26B9933600DC8DD4 /* RSGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSGalleryCell.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				4007329826B44B1A006C0C6C /* RSGalleryVC.swift */,
+				4067192D26B9933600DC8DD4 /* RSGalleryCell.swift */,
 				401AC19A26B7D16700B087C9 /* Detailed Image */,
 			);
 			path = Gallery;
@@ -527,6 +530,7 @@
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
 				4069C4FA26B2C19D008F69BC /* RSDrawStoriesCell.m in Sources */,
 				4069C50126B2CC19008F69BC /* UIColor+ColorWithHex.m in Sources */,
+				4067192E26B9933600DC8DD4 /* RSGalleryCell.swift in Sources */,
 				401AC19726B7C72300B087C9 /* RSGalleryImageView.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
