@@ -73,19 +73,28 @@ class RSItemsCVC: UICollectionViewController {
 extension RSItemsCVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let sectionInset = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset
-        let width = collectionView.safeAreaLayoutGuide.layoutFrame.width
-            - sectionInset.left
-            - sectionInset.right
-            - collectionView.contentInset.left
-            - collectionView.contentInset.right
+        let sectionWidthInset: CGFloat
+        let minimumItemSpacing: CGFloat
+        
+        if UIScreen.isPortrait {
+            sectionWidthInset = 20
+            minimumItemSpacing = 16
+        } else {
+            sectionWidthInset = 80
+            minimumItemSpacing = 64
+        }
 
-        let minimumItemSpacing: CGFloat = 16
-        let aspectRatio: CGFloat        = 1.223
-        let availableSpace              = width - minimumItemSpacing
-        let itemWidth                   = availableSpace / 2
-
+        let width = collectionView.safeAreaLayoutGuide.layoutFrame.width - sectionWidthInset * 2
+        let availableSpace       = width - minimumItemSpacing
+        let itemWidth            = availableSpace / 2
+        let aspectRatio: CGFloat = 1.223
         return CGSize(width: itemWidth, height: itemWidth * aspectRatio)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIScreen.isPortrait
+            ? UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            : UIEdgeInsets(top: 20, left: 80, bottom: 0, right: 80)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

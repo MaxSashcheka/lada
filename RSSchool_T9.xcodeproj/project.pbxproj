@@ -43,6 +43,7 @@
 		405EFAA926B93027000EF08C /* s6-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA826B93027000EF08C /* s6-title.txt */; };
 		405EFAAB26B93F6C000EF08C /* RSStoryPathCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */; };
 		405EFAAD26B9721C000EF08C /* RSDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAC26B9721C000EF08C /* RSDismissButton.swift */; };
+		405EFAB026B97B96000EF08C /* UIScreen+IsPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAF26B97B96000EF08C /* UIScreen+IsPortrait.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -92,6 +93,7 @@
 		405EFAA826B93027000EF08C /* s6-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s6-title.txt"; sourceTree = "<group>"; };
 		405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryPathCell.swift; sourceTree = "<group>"; };
 		405EFAAC26B9721C000EF08C /* RSDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDismissButton.swift; sourceTree = "<group>"; };
+		405EFAAF26B97B96000EF08C /* UIScreen+IsPortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+IsPortrait.swift"; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 			path = "story-6";
 			sourceTree = "<group>";
 		};
+		405EFAAE26B97B6D000EF08C /* UIScreen+IsPortrait */ = {
+			isa = PBXGroup;
+			children = (
+				405EFAAF26B97B96000EF08C /* UIScreen+IsPortrait.swift */,
+			);
+			path = "UIScreen+IsPortrait";
+			sourceTree = "<group>";
+		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +392,7 @@
 		4069C4FE26B2CBF9008F69BC /* Cathegories */ = {
 			isa = PBXGroup;
 			children = (
+				405EFAAE26B97B6D000EF08C /* UIScreen+IsPortrait */,
 				401AC18B26B6E5CA00B087C9 /* UIView+AddSubviews */,
 				4007328C26B3D639006C0C6C /* Object Exists */,
 				4069C50426B2CD84008F69BC /* Label Color from Text */,
@@ -503,6 +514,7 @@
 				405EFA9E26B92F8C000EF08C /* story-5-path.swift in Sources */,
 				2BB9F30126AF557E00F43852 /* story-2-path.swift in Sources */,
 				4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */,
+				405EFAB026B97B96000EF08C /* UIScreen+IsPortrait.swift in Sources */,
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
 				401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */,

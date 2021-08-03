@@ -47,12 +47,12 @@ class RSDetailedImageVC: UIViewController {
         let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
         let scale = min(widthScale, heightScale)
         
-        if UIScreen.main.bounds.height < UIScreen.main.bounds.width {
-            let actualImageWidth = (imageView.image?.size.width)! * scale
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: view.frame.size.width / 2 - actualImageWidth / 2 - 40, bottom: 0, right: 0)
-        } else {
+        if UIScreen.isPortrait {
             let actualImageHeight = (imageView.image?.size.height)! * scale
             scrollView.contentInset = UIEdgeInsets(top: view.frame.size.height / 2 - actualImageHeight / 2 - 40, left: 0, bottom: 0, right: 0)
+        } else {
+            let actualImageWidth = (imageView.image?.size.width)! * scale
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: view.frame.size.width / 2 - actualImageWidth / 2 - 40, bottom: 0, right: 0)
         }
     }
     

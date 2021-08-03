@@ -24,18 +24,12 @@ class RSTabbarController: UITabBarController {
     }
     
     private func configuredRSItemsVC() -> RSItemsCVC {
-        let itemsVC = RSItemsCVC(collectionViewLayout: configuredFlowLayout())
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 30
+        let itemsVC = RSItemsCVC(collectionViewLayout: flowLayout)
         itemsVC.tabBarItem = UITabBarItem(title: "Items", image: UIImage(systemName: "square.grid.2x2"), tag: 0)
         itemsVC.collectionView.register(RSItemCell.self, forCellWithReuseIdentifier: RSItemCell.reuseID)
         return itemsVC
-    }
-    
-    private func configuredFlowLayout() -> UICollectionViewFlowLayout{
-        let padding: CGFloat          = 20
-        let flowLayout                = UICollectionViewFlowLayout()
-        flowLayout.sectionInset       = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.minimumLineSpacing = 30
-        return flowLayout
     }
 
 }
