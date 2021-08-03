@@ -93,7 +93,7 @@ class RSDetailedImageVC: UIViewController {
         scrollView.pinToSafeAreaEdges(of: view)
         scrollView.addSubview(imageView)
         scrollView.delegate = self
-        scrollView.maximumZoomScale = 4
+        scrollView.maximumZoomScale = 3
         scrollView.contentSize = imageView.bounds.size
 
         NSLayoutConstraint.activate([

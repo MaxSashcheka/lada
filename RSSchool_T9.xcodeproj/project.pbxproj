@@ -35,6 +35,12 @@
 		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
 		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
 		401AC19C26B7D17500B087C9 /* RSDetailedImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */; };
+		405EFA9E26B92F8C000EF08C /* story-5-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFA9D26B92F8C000EF08C /* story-5-path.swift */; };
+		405EFAA026B92FCE000EF08C /* s5-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFA9F26B92FCE000EF08C /* s5-text.txt */; };
+		405EFAA226B92FDB000EF08C /* s5-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA126B92FDB000EF08C /* s5-title.txt */; };
+		405EFAA526B92FFF000EF08C /* story-6-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAA426B92FFF000EF08C /* story-6-path.swift */; };
+		405EFAA726B9301E000EF08C /* s6-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA626B9301E000EF08C /* s6-text.txt */; };
+		405EFAA926B93027000EF08C /* s6-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA826B93027000EF08C /* s6-title.txt */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -76,6 +82,12 @@
 		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
 		401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDetailedImageVC.swift; sourceTree = "<group>"; };
+		405EFA9D26B92F8C000EF08C /* story-5-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-5-path.swift"; sourceTree = "<group>"; };
+		405EFA9F26B92FCE000EF08C /* s5-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s5-text.txt"; sourceTree = "<group>"; };
+		405EFAA126B92FDB000EF08C /* s5-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s5-title.txt"; sourceTree = "<group>"; };
+		405EFAA426B92FFF000EF08C /* story-6-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-6-path.swift"; sourceTree = "<group>"; };
+		405EFAA626B9301E000EF08C /* s6-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s6-text.txt"; sourceTree = "<group>"; };
+		405EFAA826B93027000EF08C /* s6-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s6-title.txt"; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -143,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				4007328B26B3D4CA006C0C6C /* colors */,
+				405EFAA326B92FE8000EF08C /* story-6 */,
+				405EFA9C26B92F68000EF08C /* story-5 */,
 				2BB9F30C26AF5F9C00F43852 /* story-4 */,
 				2BB9F30326AF5D7E00F43852 /* story-3 */,
 				2BB9F2FC26AF554C00F43852 /* story-2 */,
@@ -248,6 +262,26 @@
 				401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */,
 			);
 			path = "Detailed Image";
+			sourceTree = "<group>";
+		};
+		405EFA9C26B92F68000EF08C /* story-5 */ = {
+			isa = PBXGroup;
+			children = (
+				405EFA9D26B92F8C000EF08C /* story-5-path.swift */,
+				405EFA9F26B92FCE000EF08C /* s5-text.txt */,
+				405EFAA126B92FDB000EF08C /* s5-title.txt */,
+			);
+			path = "story-5";
+			sourceTree = "<group>";
+		};
+		405EFAA326B92FE8000EF08C /* story-6 */ = {
+			isa = PBXGroup;
+			children = (
+				405EFAA426B92FFF000EF08C /* story-6-path.swift */,
+				405EFAA626B9301E000EF08C /* s6-text.txt */,
+				405EFAA826B93027000EF08C /* s6-title.txt */,
+			);
+			path = "story-6";
 			sourceTree = "<group>";
 		};
 		4069C4DE26B2A478008F69BC /* Support */ = {
@@ -430,15 +464,19 @@
 			files = (
 				2BB9E76826AB605900112651 /* LaunchScreen.storyboard in Resources */,
 				2BB9F30726AF5D9D00F43852 /* s3-text.txt in Resources */,
+				405EFAA726B9301E000EF08C /* s6-text.txt in Resources */,
 				2BB9F30926AF5DAF00F43852 /* s3-title.txt in Resources */,
 				2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */,
 				2BB9F29526AE01A300F43852 /* s1-title.txt in Resources */,
+				405EFAA926B93027000EF08C /* s6-title.txt in Resources */,
 				2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */,
 				2BB9F2FE26AF556600F43852 /* s2-title.txt in Resources */,
 				2BB9E76526AB605900112651 /* Assets.xcassets in Resources */,
 				2BB9F30226AF57B500F43852 /* s2-text.txt in Resources */,
 				2BB9E76326AB605700112651 /* Main.storyboard in Resources */,
+				405EFAA226B92FDB000EF08C /* s5-title.txt in Resources */,
 				2BB9F29726AE01B800F43852 /* s1-text.txt in Resources */,
+				405EFAA026B92FCE000EF08C /* s5-text.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +492,9 @@
 				4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */,
 				4007329226B3EDBD006C0C6C /* RSStoryCell.swift in Sources */,
 				4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */,
+				405EFAA526B92FFF000EF08C /* story-6-path.swift in Sources */,
 				401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */,
+				405EFA9E26B92F8C000EF08C /* story-5-path.swift in Sources */,
 				2BB9F30126AF557E00F43852 /* story-2-path.swift in Sources */,
 				4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */,
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
