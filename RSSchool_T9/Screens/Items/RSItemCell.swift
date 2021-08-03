@@ -13,8 +13,8 @@ class RSItemCell: UICollectionViewCell {
     
     static let reuseID = "ItemCell"
     
-    let imageView: GradientImageView = {
-        let img = GradientImageView(gradientLocations: [0.64, 0.95])
+    let imageView: RSGradientImageView = {
+        let img = RSGradientImageView(gradientLocations: [0.64, 0.95])
         img.layer.cornerRadius = 10
         img.layer.borderColor  = UIColor.black.cgColor
         img.layer.borderWidth  = 1.0

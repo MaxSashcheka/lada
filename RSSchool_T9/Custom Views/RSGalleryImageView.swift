@@ -9,7 +9,7 @@
 
 import UIKit
 
-class GalleryImageView: UIView {
+class RSGalleryImageView: UIView {
     
     let imageView: UIImageView = {
         let iv = UIImageView()

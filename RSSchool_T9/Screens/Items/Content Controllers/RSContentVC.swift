@@ -16,25 +16,10 @@ class RSContentVC: UIViewController {
     
     let scrollView  = UIScrollView()
     let contentView = UIView()
+    let dismissButtton = RSDismissButton()
     
-    let dismissButtton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "xmark"), for: .normal)
-        btn.tintColor          = .white
-        btn.layer.cornerRadius = 20
-        btn.layer.borderWidth  = 1
-        btn.layer.borderColor  = UIColor.white.cgColor
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc private func dismissController() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    let imageView: GradientImageView = {
-        let img = GradientImageView(gradientLocations: [0.5, 1])
+    let imageView: RSGradientImageView = {
+        let img = RSGradientImageView(gradientLocations: [0.5, 1])
         img.layer.cornerRadius = 8
         img.layer.borderWidth  = 1
         img.layer.borderColor  = UIColor.white.cgColor
@@ -75,8 +60,12 @@ class RSContentVC: UIViewController {
         view.backgroundColor = .black
         configureScrollView()
         layoutUI()
+        dismissButtton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
     }
     
+    @objc private func dismissController() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Configurations
     private func configureScrollView() {

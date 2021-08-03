@@ -32,8 +32,8 @@
 		4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007329A26B44B28006C0C6C /* RSContentVC.swift */; };
 		401AC18A26B6E5A200B087C9 /* RSTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18926B6E5A200B087C9 /* RSTextLabel.swift */; };
 		401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */; };
-		401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* GradientImageView.swift */; };
-		401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* GalleryImageView.swift */; };
+		401AC19226B721DB00B087C9 /* RSGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19126B721DB00B087C9 /* RSGradientImageView.swift */; };
+		401AC19726B7C72300B087C9 /* RSGalleryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19626B7C72300B087C9 /* RSGalleryImageView.swift */; };
 		401AC19C26B7D17500B087C9 /* RSDetailedImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */; };
 		405EFA9E26B92F8C000EF08C /* story-5-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFA9D26B92F8C000EF08C /* story-5-path.swift */; };
 		405EFAA026B92FCE000EF08C /* s5-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFA9F26B92FCE000EF08C /* s5-text.txt */; };
@@ -42,6 +42,7 @@
 		405EFAA726B9301E000EF08C /* s6-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA626B9301E000EF08C /* s6-text.txt */; };
 		405EFAA926B93027000EF08C /* s6-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 405EFAA826B93027000EF08C /* s6-title.txt */; };
 		405EFAAB26B93F6C000EF08C /* RSStoryPathCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */; };
+		405EFAAD26B9721C000EF08C /* RSDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EFAAC26B9721C000EF08C /* RSDismissButton.swift */; };
 		4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E426B2A64D008F69BC /* RSTabbarController.swift */; };
 		4069C4E726B2A6BB008F69BC /* RSItemsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */; };
 		4069C4EB26B2A6EE008F69BC /* RSSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4069C4EA26B2A6EE008F69BC /* RSSettingsTVC.m */; };
@@ -80,8 +81,8 @@
 		4007329A26B44B28006C0C6C /* RSContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSContentVC.swift; sourceTree = "<group>"; };
 		401AC18926B6E5A200B087C9 /* RSTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTextLabel.swift; sourceTree = "<group>"; };
 		401AC18C26B6E5E400B087C9 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
-		401AC19126B721DB00B087C9 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
-		401AC19626B7C72300B087C9 /* GalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageView.swift; sourceTree = "<group>"; };
+		401AC19126B721DB00B087C9 /* RSGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSGradientImageView.swift; sourceTree = "<group>"; };
+		401AC19626B7C72300B087C9 /* RSGalleryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSGalleryImageView.swift; sourceTree = "<group>"; };
 		401AC19B26B7D17500B087C9 /* RSDetailedImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDetailedImageVC.swift; sourceTree = "<group>"; };
 		405EFA9D26B92F8C000EF08C /* story-5-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-5-path.swift"; sourceTree = "<group>"; };
 		405EFA9F26B92FCE000EF08C /* s5-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s5-text.txt"; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		405EFAA626B9301E000EF08C /* s6-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s6-text.txt"; sourceTree = "<group>"; };
 		405EFAA826B93027000EF08C /* s6-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s6-title.txt"; sourceTree = "<group>"; };
 		405EFAAA26B93F6C000EF08C /* RSStoryPathCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSStoryPathCell.swift; sourceTree = "<group>"; };
+		405EFAAC26B9721C000EF08C /* RSDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDismissButton.swift; sourceTree = "<group>"; };
 		4069C4E426B2A64D008F69BC /* RSTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabbarController.swift; sourceTree = "<group>"; };
 		4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSItemsCVC.swift; sourceTree = "<group>"; };
 		4069C4E826B2A6EE008F69BC /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				4069C4E626B2A6BB008F69BC /* RSItemsCVC.swift */,
+				4007329126B3EDBD006C0C6C /* RSItemCell.swift */,
 				4007329726B44ADC006C0C6C /* Content Controllers */,
 			);
 			path = Items;
@@ -359,9 +362,9 @@
 			isa = PBXGroup;
 			children = (
 				401AC18926B6E5A200B087C9 /* RSTextLabel.swift */,
-				4007329126B3EDBD006C0C6C /* RSItemCell.swift */,
-				401AC19126B721DB00B087C9 /* GradientImageView.swift */,
-				401AC19626B7C72300B087C9 /* GalleryImageView.swift */,
+				401AC19126B721DB00B087C9 /* RSGradientImageView.swift */,
+				401AC19626B7C72300B087C9 /* RSGalleryImageView.swift */,
+				405EFAAC26B9721C000EF08C /* RSDismissButton.swift */,
 				4069C4F226B2C139008F69BC /* Draw Stories Cell */,
 			);
 			path = "Custom Views";
@@ -496,13 +499,14 @@
 				4007329226B3EDBD006C0C6C /* RSItemCell.swift in Sources */,
 				4069C4E526B2A64D008F69BC /* RSTabbarController.swift in Sources */,
 				405EFAA526B92FFF000EF08C /* story-6-path.swift in Sources */,
-				401AC19226B721DB00B087C9 /* GradientImageView.swift in Sources */,
+				401AC19226B721DB00B087C9 /* RSGradientImageView.swift in Sources */,
 				405EFA9E26B92F8C000EF08C /* story-5-path.swift in Sources */,
 				2BB9F30126AF557E00F43852 /* story-2-path.swift in Sources */,
 				4007329B26B44B28006C0C6C /* RSContentVC.swift in Sources */,
 				4007328F26B3D650006C0C6C /* NSUserDefaults+Exists.m in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
 				401AC18D26B6E5E400B087C9 /* UIView+AddSubviews.swift in Sources */,
+				405EFAAD26B9721C000EF08C /* RSDismissButton.swift in Sources */,
 				405EFAAB26B93F6C000EF08C /* RSStoryPathCell.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
@@ -511,7 +515,7 @@
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
 				4069C4FA26B2C19D008F69BC /* RSDrawStoriesCell.m in Sources */,
 				4069C50126B2CC19008F69BC /* UIColor+ColorWithHex.m in Sources */,
-				401AC19726B7C72300B087C9 /* GalleryImageView.swift in Sources */,
+				401AC19726B7C72300B087C9 /* RSGalleryImageView.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 				4069C50726B2CDA6008F69BC /* UILabel+ColorFromText.m in Sources */,
 				4007329626B44495006C0C6C /* RSStoryVC.swift in Sources */,

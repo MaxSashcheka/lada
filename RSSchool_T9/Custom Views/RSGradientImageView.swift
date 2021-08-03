@@ -9,7 +9,7 @@
 
 import UIKit
 
-class GradientImageView: UIImageView {
+class RSGradientImageView: UIImageView {
     
     var gradientLocations: [NSNumber]
     

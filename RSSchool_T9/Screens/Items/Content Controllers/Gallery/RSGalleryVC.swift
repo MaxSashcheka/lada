@@ -39,7 +39,7 @@ class RSGalleryVC: RSContentVC {
     // MARK: - Customization and layout
     private func loadImagesToViews() {
         for image in gallery.images {
-            let iv = GalleryImageView(image: image)
+            let iv = RSGalleryImageView(image: image)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openImageVC))
             iv.addGestureRecognizer(tapGesture)
             imagesStackView.addArrangedSubview(iv)
@@ -48,7 +48,7 @@ class RSGalleryVC: RSContentVC {
     
     @objc private func openImageVC(_ sender: UITapGestureRecognizer) {
         let imageVC = RSDetailedImageVC()
-        imageVC.imageView.image = (sender.view as! GalleryImageView).imageView.image
+        imageVC.imageView.image = (sender.view as! RSGalleryImageView).imageView.image
         imageVC.modalPresentationStyle = .fullScreen
         self.present(imageVC, animated: true)
     }

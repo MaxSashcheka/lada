@@ -11,23 +11,8 @@ import UIKit
 
 class RSDetailedImageVC: UIViewController {
     
-    let scrollView = UIScrollView()
-    
-    let dismissButtton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(systemName: "xmark"), for: .normal)
-        btn.tintColor          = .white
-        btn.layer.cornerRadius = 20
-        btn.layer.borderWidth  = 1
-        btn.layer.borderColor  = UIColor.white.cgColor
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc private func dismissController() {
-        self.dismiss(animated: true, completion: nil)
-    }
+    let scrollView     = UIScrollView()
+    let dismissButtton = RSDismissButton()
 
     let imageView: UIImageView = {
         let iv = UIImageView()
@@ -44,6 +29,11 @@ class RSDetailedImageVC: UIViewController {
         addTapGesture()
         layoutUI()
         updateMinimumZoomScale()
+        dismissButtton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
+    }
+    
+    @objc private func dismissController() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -53,7 +43,6 @@ class RSDetailedImageVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //MARK: REFACTOR (too tired to fix 😔)
         let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
         let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
         let scale = min(widthScale, heightScale)

@@ -19,7 +19,7 @@ class RSStoryPathCell: UICollectionViewCell {
         return shapeLayer
     }()
     
-    static let reuseID = "StoryCell"
+    static let reuseID = "StoryPathCell"
       
     func set(with strokeColor: CGColor, and path: CGPath) {
         layer.addSublayer(shapeLayer)
