@@ -38,7 +38,7 @@ class RSItemsCVC: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCell", for: indexPath) as! RSStoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RSItemCell.reuseID, for: indexPath) as! RSItemCell
         
         var content: ContentRepresentable
         switch FillingData.data[indexPath.row] {

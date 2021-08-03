@@ -26,7 +26,7 @@ class RSTabbarController: UITabBarController {
     private func configuredRSItemsVC() -> RSItemsCVC {
         let itemsVC = RSItemsCVC(collectionViewLayout: configuredFlowLayout())
         itemsVC.tabBarItem = UITabBarItem(title: "Items", image: UIImage(systemName: "square.grid.2x2"), tag: 0)
-        itemsVC.collectionView.register(RSStoryCell.self, forCellWithReuseIdentifier: "storyCell")
+        itemsVC.collectionView.register(RSItemCell.self, forCellWithReuseIdentifier: RSItemCell.reuseID)
         return itemsVC
     }
     

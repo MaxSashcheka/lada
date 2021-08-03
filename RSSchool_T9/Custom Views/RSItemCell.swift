@@ -9,7 +9,9 @@
 
 import UIKit
 
-class RSStoryCell: UICollectionViewCell {
+class RSItemCell: UICollectionViewCell {
+    
+    static let reuseID = "ItemCell"
     
     let imageView: GradientImageView = {
         let img = GradientImageView(gradientLocations: [0.64, 0.95])
