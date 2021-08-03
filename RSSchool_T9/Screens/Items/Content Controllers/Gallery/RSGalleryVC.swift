@@ -32,7 +32,9 @@ class RSGalleryVC: RSContentVC {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        contentHeightConstraint.constant = CGFloat(gallery.images.count + 1) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20) + 190
+        let imagesStackHeight:CGFloat = CGFloat(gallery.images.count) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20)
+        let titleImageHeight: CGFloat = (view.safeAreaLayoutGuide.layoutFrame.width - imageLeadingConstraint.constant * 2) * 1.337
+        contentHeightConstraint.constant = imagesStackHeight + titleImageHeight + 190
     }
     
     

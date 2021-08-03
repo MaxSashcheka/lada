@@ -47,9 +47,9 @@ class RSStoryVC: RSContentVC {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        let width = view.safeAreaLayoutGuide.layoutFrame.width - 40
-        textLabelHeightConstraint.constant = heightForView(text: story.text, width: width)
-        contentHeightConstraint.constant   = textLabelHeightConstraint.constant + width * 1.337 + 360
+        let width = view.safeAreaLayoutGuide.layoutFrame.width
+        textLabelHeightConstraint.constant = heightForView(text: story.text, width: width - 40)
+        contentHeightConstraint.constant   = textLabelHeightConstraint.constant + (width - imageLeadingConstraint.constant * 2) * 1.337 + 360
     }
     
     

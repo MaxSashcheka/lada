@@ -13,6 +13,8 @@ class RSContentVC: UIViewController {
     
     // MARK: - Customized UI Elements
     var contentHeightConstraint: NSLayoutConstraint!
+    var imageLeadingConstraint:  NSLayoutConstraint!
+    var imageTrailingConstraint: NSLayoutConstraint!
     
     let scrollView  = UIScrollView()
     let contentView = UIView()
@@ -67,6 +69,12 @@ class RSContentVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        imageLeadingConstraint.constant  = UIScreen.isPortrait ? 20 : 200
+        imageTrailingConstraint.constant = -imageLeadingConstraint.constant
+    }
+    
     // MARK: - Configurations
     private func configureScrollView() {
         view.addSubview(scrollView)
@@ -76,17 +84,10 @@ class RSContentVC: UIViewController {
     }
     
     private func layoutUI() {
-        contentHeightConstraint = NSLayoutConstraint(item: contentView,
-                                                     attribute: .height,
-                                                     relatedBy: .equal,
-                                                     toItem: nil,
-                                                     attribute: .notAnAttribute,
-                                                     multiplier: 1,
-                                                     constant: 0)
-        
+        prepareConstraints()
+
         contentView.addSubviews(imageView, typeLabel, separationLine, dismissButtton)
         imageView.addSubview(titleLabel)
-        
         NSLayoutConstraint.activate([
             contentHeightConstraint,
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
@@ -97,9 +98,9 @@ class RSContentVC: UIViewController {
             dismissButtton.widthAnchor.constraint(equalToConstant: 40),
             
             imageView.topAnchor.constraint(equalTo: dismissButtton.bottomAnchor, constant: 30),
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.337),
+            imageLeadingConstraint,
+            imageTrailingConstraint,
             
             titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 30),
             titleLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -30),
@@ -114,6 +115,32 @@ class RSContentVC: UIViewController {
             separationLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 100),
             separationLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100),
         ])
+    }
+    
+    private func prepareConstraints() {
+        contentHeightConstraint = NSLayoutConstraint(item: contentView,
+                                                     attribute: .height,
+                                                     relatedBy: .equal,
+                                                     toItem: nil,
+                                                     attribute: .notAnAttribute,
+                                                     multiplier: 1,
+                                                     constant: 0)
+        
+        imageLeadingConstraint = NSLayoutConstraint(item: imageView,
+                                                     attribute: .leading,
+                                                     relatedBy: .equal,
+                                                     toItem: contentView,
+                                                     attribute: .leading,
+                                                     multiplier: 1,
+                                                     constant: 0)
+        
+        imageTrailingConstraint = NSLayoutConstraint(item: imageView,
+                                                     attribute: .trailing,
+                                                     relatedBy: .equal,
+                                                     toItem: contentView,
+                                                     attribute: .trailing,
+                                                     multiplier: 1,
+                                                     constant: 0)
     }
     
     
