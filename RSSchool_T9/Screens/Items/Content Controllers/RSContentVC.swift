@@ -71,7 +71,7 @@ class RSContentVC: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        imageLeadingConstraint.constant  = UIScreen.isPortrait ? 20 : 200
+        imageLeadingConstraint.constant  = UIScreen.isPortrait ? 20 : UIScreen.main.bounds.width * 0.25
         imageTrailingConstraint.constant = -imageLeadingConstraint.constant
     }
     
