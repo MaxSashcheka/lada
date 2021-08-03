@@ -119,4 +119,17 @@ extension RSStoryVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         story.paths.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard drawStories == true else { return }
+        
+        let shapeLayer = cell.layer.sublayers?.first!
+        shapeLayer!.removeAllAnimations()
+        let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        drawAnimation.fromValue      = 0
+        drawAnimation.toValue        = 1
+        drawAnimation.duration       = 3
+        drawAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
+        shapeLayer!.add(drawAnimation, forKey: "drawRectStroke")
+    }
 }

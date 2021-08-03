@@ -11,15 +11,19 @@ import UIKit
 
 class RSStoryPathCell: UICollectionViewCell {
     
+    let shapeLayer: CAShapeLayer = {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeEnd = 1
+        shapeLayer.lineWidth = 1
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        return shapeLayer
+    }()
+    
     static let reuseID = "StoryCell"
       
     func set(with strokeColor: CGColor, and path: CGPath) {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path
-        shapeLayer.strokeColor = strokeColor
-        shapeLayer.lineWidth = 1
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeEnd = 1
         layer.addSublayer(shapeLayer)
+        shapeLayer.strokeColor = strokeColor
+        shapeLayer.path = path
     }
 }
