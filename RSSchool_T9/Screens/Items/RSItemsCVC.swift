@@ -93,8 +93,8 @@ extension RSItemsCVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIScreen.isPortrait
-            ? UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-            : UIEdgeInsets(top: 20, left: 80, bottom: 0, right: 80)
+            ? UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
+            : UIEdgeInsets(top: 40, left: 80, bottom: 40, right: 80)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

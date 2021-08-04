@@ -59,8 +59,8 @@ class RSItemCell: UICollectionViewCell {
     private func layoutUI() {
         addSubview(imageView)
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
         ])
