@@ -46,10 +46,22 @@ class RSGalleryVC: RSContentVC {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        let imagesStackHeight:CGFloat = CGFloat(gallery.images.count) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20)
+        
+        let imagesStackHeight:CGFloat
+        if UIScreen.isPortrait {
+            imagesStackHeight = CGFloat(gallery.images.count) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20)
+        } else {
+            let rowsCount = (gallery.images.count + 2) / 3
+            let sectionWidthInsets: CGFloat = 20 * 2
+            let screenWidth = view.safeAreaLayoutGuide.layoutFrame.width
+            let availableSpace       = screenWidth - sectionWidthInsets - 25 * 2
+            let itemWidth            = availableSpace / 3
+            let rowHeight = itemWidth *  1.337
+            imagesStackHeight = (rowHeight + 20) * CGFloat(rowsCount) + 20
+        }
+        
         let titleImageHeight: CGFloat = (view.safeAreaLayoutGuide.layoutFrame.width - imageLeadingConstraint.constant * 2) * 1.337
         contentHeightConstraint.constant = imagesStackHeight + titleImageHeight + 190
-        //TODO: Fix height
     }
     
     
