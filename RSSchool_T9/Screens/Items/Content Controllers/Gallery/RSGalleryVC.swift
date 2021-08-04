@@ -13,6 +13,8 @@ class RSGalleryVC: RSContentVC {
     
     var gallery: Gallery!
     
+    var collectionViewHeightConstraint: NSLayoutConstraint!
+    
     let imagesStackView: UIStackView = {
         let sv = UIStackView()
         sv.spacing = 20
@@ -41,27 +43,21 @@ class RSGalleryVC: RSContentVC {
         collectionView.dataSource = self
         setupBasicUI(with: gallery)
         loadImagesToViews()
+        
+        collectionViewHeightConstraint = NSLayoutConstraint(item: collectionView,
+                                                     attribute: .height,
+                                                     relatedBy: .equal,
+                                                     toItem: nil,
+                                                     attribute: .notAnAttribute,
+                                                     multiplier: 1,
+                                                     constant: 0)
+        
         layoutUI()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        let imagesStackHeight:CGFloat
-        if UIScreen.isPortrait {
-            imagesStackHeight = CGFloat(gallery.images.count) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20)
-        } else {
-            let rowsCount = (gallery.images.count + 2) / 3
-            let sectionWidthInsets: CGFloat = 20 * 2
-            let screenWidth = view.safeAreaLayoutGuide.layoutFrame.width
-            let availableSpace       = screenWidth - sectionWidthInsets - 25 * 2
-            let itemWidth            = availableSpace / 3
-            let rowHeight = itemWidth *  1.337
-            imagesStackHeight = (rowHeight + 20) * CGFloat(rowsCount) + 20
-        }
-        
-        let titleImageHeight: CGFloat = (view.safeAreaLayoutGuide.layoutFrame.width - imageLeadingConstraint.constant * 2) * 1.337
-        contentHeightConstraint.constant = imagesStackHeight + titleImageHeight + 190
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
     
@@ -78,7 +74,8 @@ class RSGalleryVC: RSContentVC {
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: separationLine.bottomAnchor, constant: 50),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            collectionViewHeightConstraint
         ])
     }
 }
@@ -99,7 +96,7 @@ extension RSGalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sectionWidthInsets: CGFloat = 20 * 2
         let minimumItemSpacing: CGFloat = UIScreen.isPortrait ? 0 : 25
-        let screenWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
+        let screenWidth          = collectionView.safeAreaLayoutGuide.layoutFrame.width
         let availableSpace       = screenWidth - sectionWidthInsets - minimumItemSpacing * 2
         let itemWidth            = UIScreen.isPortrait ? availableSpace : availableSpace / 3
         let aspectRatio: CGFloat = 1.337

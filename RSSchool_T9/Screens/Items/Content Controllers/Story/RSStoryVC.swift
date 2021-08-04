@@ -21,7 +21,7 @@ class RSStoryVC: RSContentVC {
     let collectionView: UICollectionView = {
         let flowLayout                = UICollectionViewFlowLayout()
         flowLayout.sectionInset       = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
-        flowLayout.itemSize           = CGSize(width: 75, height: 100)
+        flowLayout.itemSize           = CGSize(width: 75, height: 75)
         flowLayout.minimumLineSpacing = 100
         flowLayout.scrollDirection    = .horizontal
         
@@ -49,7 +49,6 @@ class RSStoryVC: RSContentVC {
         super.viewWillLayoutSubviews()
         let width = view.safeAreaLayoutGuide.layoutFrame.width
         textLabelHeightConstraint.constant = heightForView(text: story.text, width: width - 40)
-        contentHeightConstraint.constant   = textLabelHeightConstraint.constant + (width - imageLeadingConstraint.constant * 2) * 1.337 + 360
     }
     
     
@@ -69,19 +68,16 @@ class RSStoryVC: RSContentVC {
     
     // MARK: Layout
     private func layoutUI() {
-        textLabelHeightConstraint = NSLayoutConstraint(item: textLabel,
-                                                     attribute: .height,
-                                                     relatedBy: .equal,
-                                                     toItem: nil,
-                                                     attribute: .notAnAttribute,
-                                                     multiplier: 1,
+        textLabelHeightConstraint = NSLayoutConstraint(item: textLabel, attribute: .height, relatedBy: .equal,
+                                                     toItem: nil, attribute: .notAnAttribute, multiplier: 1,
                                                      constant: 0)
         
         contentView.addSubviews(collectionView, textLabel)
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
             collectionView.topAnchor.constraint(equalTo: separationLine.bottomAnchor, constant: 50),
+            collectionView.bottomAnchor.constraint(equalTo: textLabel.topAnchor, constant: -50),
             collectionView.heightAnchor.constraint(equalToConstant: 100),
 
             textLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
