@@ -103,9 +103,7 @@ class RSStoryVC: RSContentVC {
 extension RSStoryVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RSStoryPathCell.reuseID, for: indexPath) as! RSStoryPathCell
-        cell.set(with: strokeColor, and: story.paths[indexPath.row])
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: RSStoryPathCell.reuseID, for: indexPath)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -117,15 +115,8 @@ extension RSStoryVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard drawStories == true else { return }
-        
-        let shapeLayer = cell.layer.sublayers?.first!
-        shapeLayer!.removeAllAnimations()
-        let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        drawAnimation.fromValue      = 0
-        drawAnimation.toValue        = 1
-        drawAnimation.duration       = 3
-        drawAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
-        shapeLayer!.add(drawAnimation, forKey: "drawRectStroke")
+        let cell = cell as! RSStoryPathCell
+        cell.removeShapeLayer()
+        cell.set(with: strokeColor, and: story.paths[indexPath.row], animated: drawStories)
     }
 }

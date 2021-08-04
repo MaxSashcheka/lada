@@ -76,7 +76,7 @@ class RSContentVC: UIViewController {
         imageView.image = content.coverImage
         setTypeLabelText(to: content.type)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.1
+        paragraphStyle.lineHeightMultiple = 1.2
         titleLabel.attributedText = NSMutableAttributedString(string: content.title, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
     

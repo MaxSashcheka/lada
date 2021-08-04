@@ -11,19 +11,33 @@ import UIKit
 
 class RSStoryPathCell: UICollectionViewCell {
     
-    let shapeLayer: CAShapeLayer = {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeEnd = 1
-        shapeLayer.lineWidth = 1
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        return shapeLayer
-    }()
+    private var shapeLayer: CAShapeLayer!
     
     static let reuseID = "StoryPathCell"
       
-    func set(with strokeColor: CGColor, and path: CGPath) {
-        layer.addSublayer(shapeLayer)
-        shapeLayer.strokeColor = strokeColor
+    func set(with strokeColor: CGColor, and path: CGPath, animated: Bool) {
+        shapeLayer = CAShapeLayer()
         shapeLayer.path = path
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.frame = self.bounds//
+        shapeLayer.strokeColor = strokeColor
+        shapeLayer.lineWidth = 1
+        shapeLayer.strokeEnd = 1
+        
+        if animated {
+            let animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.duration = 3
+            animation.fromValue = 0
+            animation.toValue = 1
+            shapeLayer.add(animation, forKey: "animatePath")
+        }
+        
+        layer.addSublayer(shapeLayer)
+    }
+    
+    func removeShapeLayer() {
+        if shapeLayer != nil {
+            shapeLayer.removeFromSuperlayer()
+        }
     }
 }

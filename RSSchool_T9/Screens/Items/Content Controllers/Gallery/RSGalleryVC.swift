@@ -39,8 +39,9 @@ class RSGalleryVC: RSContentVC {
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate   = self
-        collectionView.dataSource = self
+        collectionView.delegate        = self
+        collectionView.dataSource      = self
+        collectionView.isScrollEnabled = false
         setupBasicUI(with: gallery)
         loadImagesToViews()
         
@@ -113,5 +114,6 @@ extension RSGalleryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.collectionViewLayout.invalidateLayout();
     }
+
     
 }
