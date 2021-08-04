@@ -77,7 +77,7 @@ class RSContentVC: UIViewController {
         setTypeLabelText(to: content.type)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.2
-        titleLabel.attributedText = NSMutableAttributedString(string: content.title, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        titleLabel.attributedText = NSMutableAttributedString(string: content.title.trimmingCharacters(in: .newlines), attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
     
     private func setTypeLabelText(to text: String) {
