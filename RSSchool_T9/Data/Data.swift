@@ -39,7 +39,7 @@ struct FillingData {
     static let data: [ContentType] = [
         .gallery(Gallery(coverImage: .init("games-0"), title: "Board Games", images: .init(base: "games", count: 11))),
         .story(Story(coverImage: .init("story-6"), title: .from("s6-title"), text: .from("s6-text"), paths: [.story6path1, .story6path2, .story6path3, .story6path4])),
-        .gallery(Gallery(coverImage: .init("books-0"), title: "Books", images: .init(base: "books", count: 5))),
+        .gallery(Gallery(coverImage: .init("books-0"), title: "Books", images: .init(base: "books", count: 12))),
         .story(Story(coverImage: .init("story-5"), title: .from("s5-title"), text: .from("s5-text"), paths: [.story5path1, .story5path3, .story5path4, .story5path2])),
         .story(Story(coverImage: .init("story-1"), title: .from("s1-title"), text: .from("s1-text"), paths: [.story1path1, .story1path2, .story1path3])),
         .story(Story(coverImage: .init("story-2"), title: .from("s2-title"), text: .from("s2-text"), paths: [.story2path1, .story2path2])),
