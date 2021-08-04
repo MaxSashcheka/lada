@@ -58,7 +58,17 @@ class RSGalleryVC: RSContentVC {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionViewHeightConstraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
+        if UIScreen.isPortrait {
+            collectionViewHeightConstraint.constant = CGFloat(gallery.images.count) * ((view.safeAreaLayoutGuide.layoutFrame.width - 40) * 1.337 + 20)
+        } else {
+            let rowsCount = (gallery.images.count + 2) / 3
+            let sectionWidthInsets: CGFloat = 20 * 2
+            let screenWidth = view.safeAreaLayoutGuide.layoutFrame.width
+            let availableSpace       = screenWidth - sectionWidthInsets - 25 * 2
+            let itemWidth            = availableSpace / 3
+            let rowHeight = itemWidth *  1.337
+            collectionViewHeightConstraint.constant = (rowHeight + 20) * CGFloat(rowsCount)
+        }
     }
     
     
