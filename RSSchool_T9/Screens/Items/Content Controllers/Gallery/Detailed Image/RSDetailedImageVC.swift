@@ -13,81 +13,72 @@ class RSDetailedImageVC: UIViewController {
     
     let scrollView     = UIScrollView()
     let dismissButtton = RSDismissButton()
-
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
-    }()
+    let imageView      = UIImageView()
     
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        addTapGesture()
+        configureElements()
         layoutUI()
-        updateMinimumZoomScale()
-        dismissButtton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-    }
-    
-    @objc private func dismissController() {
-        self.dismiss(animated: true, completion: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        updateMinimumZoomScale()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
-        let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
-        let scale = min(widthScale, heightScale)
-        
-        if UIScreen.isPortrait {
-            let actualImageHeight = (imageView.image?.size.height)! * scale
-            scrollView.contentInset = UIEdgeInsets(top: (view.frame.size.height - actualImageHeight) / 2 - 40, left: 0, bottom: 0, right: 0)
-        } else {
-            let actualImageWidth = (imageView.image?.size.width)! * scale
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: (view.frame.size.width - actualImageWidth) / 2 - 40, bottom: 0, right: 0)
-        }
+        scrollView.zoomScale = 1
     }
     
     
     // MARK: - Configurations
-    private func updateMinimumZoomScale() {
-        let widthScale = view.safeAreaLayoutGuide.layoutFrame.width / imageView.image!.size.width
-        let heightScale = view.safeAreaLayoutGuide.layoutFrame.height / imageView.image!.size.height
-        let scale = min(widthScale,heightScale)
-        scrollView.minimumZoomScale = scale
-        scrollView.zoomScale = scrollView.minimumZoomScale
+    private func configureElements() {
+        scrollView.delegate = self
+        scrollView.maximumZoomScale = 3
+        scrollView.minimumZoomScale = 1
+        scrollView.contentSize = imageView.bounds.size
+        imageView.contentMode  = .scaleAspectFit
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints  = false
+        setupGesturesAndTargets()
     }
     
-    private func addTapGesture() {
+    private func setupGesturesAndTargets() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleInterfaceAppearance))
         view.addGestureRecognizer(tap)
+        dismissButtton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
     }
     
     @objc func toggleInterfaceAppearance() {
         dismissButtton.isHidden.toggle()
     }
     
+    @objc private func dismissController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     // MARK: - Layout
     private func layoutUI() {
         view.addSubviews(scrollView, dismissButtton)
-        scrollView.pinToSafeAreaEdges(of: view)
         scrollView.addSubview(imageView)
-        scrollView.delegate = self
-        scrollView.maximumZoomScale = 3
-        scrollView.contentSize = imageView.bounds.size
-
         NSLayoutConstraint.activate([
+            scrollView.frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.frameLayoutGuide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.frameLayoutGuide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            scrollView.contentLayoutGuide.topAnchor.constraint(equalTo: scrollView.frameLayoutGuide.topAnchor),
+            scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: scrollView.frameLayoutGuide.bottomAnchor),
+            scrollView.contentLayoutGuide.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor),
+            scrollView.contentLayoutGuide.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor),
+            
+            imageView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+            imageView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            
             dismissButtton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            dismissButtton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            dismissButtton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
             dismissButtton.heightAnchor.constraint(equalToConstant: 40),
             dismissButtton.widthAnchor.constraint(equalToConstant: 40),
         ])

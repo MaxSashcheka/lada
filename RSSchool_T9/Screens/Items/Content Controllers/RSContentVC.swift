@@ -105,7 +105,7 @@ class RSContentVC: UIViewController {
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
             dismissButtton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            dismissButtton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            dismissButtton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
             dismissButtton.heightAnchor.constraint(equalToConstant: 40),
             dismissButtton.widthAnchor.constraint(equalToConstant: 40),
             

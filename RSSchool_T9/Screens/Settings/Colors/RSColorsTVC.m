@@ -22,6 +22,7 @@
     self.tableView.rowHeight = 50;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"ColorCell"];
     _colors = [RSColorsTVC sampleColors];
+    self.tableView.alwaysBounceVertical = false;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
