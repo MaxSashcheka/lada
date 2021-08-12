@@ -49,6 +49,7 @@ class RSItemsCVC: UICollectionViewController {
         cell.imageView.image = content.coverImage
         cell.titleLabel.text = content.title
         cell.typeLabel.text  = content.type
+        
         return cell
     }
     

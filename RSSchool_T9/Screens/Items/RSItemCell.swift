@@ -7,6 +7,9 @@
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
 
+//        lbl.adjustsFontSizeToFitWidth = true
+//        lbl.minimumScaleFactor = 0.5
+
 import UIKit
 
 class RSItemCell: UICollectionViewCell {
@@ -28,6 +31,7 @@ class RSItemCell: UICollectionViewCell {
         let lbl       = UILabel()
         lbl.textColor = UIColor.white
         lbl.font      = UIFont(name: "Rockwell", size: 16)
+
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

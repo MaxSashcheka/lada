@@ -162,7 +162,6 @@
 		2BB9F29226AE017D00F43852 /* Static */ = {
 			isa = PBXGroup;
 			children = (
-				4007328B26B3D4CA006C0C6C /* colors */,
 				405EFAA326B92FE8000EF08C /* story-6 */,
 				405EFA9C26B92F68000EF08C /* story-5 */,
 				2BB9F30C26AF5F9C00F43852 /* story-4 */,
@@ -211,13 +210,6 @@
 				2BB9F31126AF5FBE00F43852 /* s4-title.txt */,
 			);
 			path = "story-4";
-			sourceTree = "<group>";
-		};
-		4007328B26B3D4CA006C0C6C /* colors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = colors;
 			sourceTree = "<group>";
 		};
 		4007328C26B3D639006C0C6C /* Object Exists */ = {
